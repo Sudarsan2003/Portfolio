@@ -94,7 +94,7 @@ export const PROJECTS = [
     description:
       "A platform for searching a movie ",
     technologies: ["HTML", "CSS", "React.js", "Tailwind"],
-    demo:"https://sudarsan2003.github.io/MovieSearchEngine/",
+    demo:"https://sudarsan2003.github.io/MFlix/",
   },
 ];
 
