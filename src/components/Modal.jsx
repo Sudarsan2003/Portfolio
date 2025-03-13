@@ -1,34 +1,33 @@
 import React from 'react';
 
-function Modal({ title, body, onClose, onSave }) {
+const Modal = ({ title, body, onClose }) => {
   return (
-    <div className="modal show" style={{ display: 'block' }} tabIndex="-1">
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">{title}</h5>
-            <button 
-              type="button" 
-              className="btn-close" 
-              onClick={onClose} 
-              aria-label="Close">
-            </button>
-          </div>
-          <div className="modal-body">
-            <p>{body}</p>
-          </div>
-          <div className="modal-footer">
-            <button 
-              type="button" 
-              className="btn btn-secondary" 
-              onClick={onClose}>
-              Close
-            </button>
-          </div>
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="bg-neutral-800 p-6 rounded-lg shadow-lg w-96">
+    
+        <div className="flex justify-between items-center border-b border-gray-600 pb-2">
+          <h2 className="text-white text-xl font-bold">{title}</h2>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-200 transition text-2xl"
+          >
+            ✖
+          </button>
+        </div>
+
+        <div className="text-gray-300 mt-4">{body}</div>
+
+        <div className="mt-4 flex justify-end">
+          <button
+            onClick={onClose}
+            className="bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded-lg transition"
+          >
+            Close
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Modal;
