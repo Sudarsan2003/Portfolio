@@ -1,0 +1,100 @@
+.contact-form-container {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #e7e5e4;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin: 50px auto;
+    font-family: "Inter", sans-serif;
+}
+
+.contact-form-container h2 {
+    margin-bottom: 20px;
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #111111;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    text-align: left;
+    font-size: 0.95em;
+    color: #52525b;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #e7e5e4;
+    background-color: #fafaf9;
+    color: #111111;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #a8a29e;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+    outline: none;
+}
+
+/* Submit button styles */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 1.05em;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #7c3aed;
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.status-success {
+    color: #16a34a;
+}
+
+.status-error {
+    color: #dc2626;
+}

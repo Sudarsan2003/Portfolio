@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    /* ---- Design tokens: light palette ---- */
+    --bg: #fafaf9;          /* stone-50, warm off-white */
+    --surface: #ffffff;
+    --ink: #111111;         /* near-black text */
+    --ink-soft: #52525b;    /* zinc-600 secondary text */
+    --line: #e7e5e4;        /* stone-200 hairline borders */
+    --violet: #7c3aed;      /* primary accent */
+    --violet-soft: #ede9fe;
+    --violet-glow: rgba(124, 58, 237, 0.18);
+
+    /* ---- Type system ----
+       display : big statement headlines (Hero, section titles)
+       ui      : nav, buttons, tabs, tags - anything interactive/chrome
+       body    : paragraphs, descriptions
+       mono    : eyebrow labels, timestamps, code-ish accents           */
+    --font-display: "Bricolage Grotesque", "Space Grotesk", sans-serif;
+    --font-ui: "Space Grotesk", sans-serif;
+    --font-body: "Plus Jakarta Sans", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+}
+
+::selection{
+    background-color: var(--violet);
+    color: #ffffff;
+}
+
+.font-display{
+    font-family: var(--font-display);
+}
+
+.font-ui{
+    font-family: var(--font-ui);
+}
+
+.font-eyebrow{
+    font-family: var(--font-mono);
+}
