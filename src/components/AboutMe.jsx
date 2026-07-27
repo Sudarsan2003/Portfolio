@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutImg from '../assets/about.jpg'
+import aboutImg from '../assets/about.png'
 import { ABOUT_TEXT } from '../constants'
 import { motion } from "motion/react"
 import { FaUserAstronaut } from "react-icons/fa"
