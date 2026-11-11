@@ -72,62 +72,77 @@ export const EDUCATION = [
   },
 ];
 
+export const RESUME_URL = "/Manikantha_Sudarshan_Resume.pdf";
+export const RESUME_FILENAME = "Manikantha_Sudarshan_Resume.pdf";
+
+// Flagship project, shown in its own 3D spotlight section above the project list.
+export const FEATURED_PROJECT = {
+  name: "LearnMate",
+  title: "LearnMate – AI-Powered RAG Tutor",
+  tagline: "Ask anything — every answer traces back to your own study material.",
+  image: project5,
+  description:
+    "A full-stack AI learning assistant built on Retrieval-Augmented Generation. Admins upload course documents; learners chat with a tutor that answers from those documents instead of guessing, so responses stay grounded and traceable.",
+  highlights: [
+    "Document ingestion pipeline with automatic text chunking, embedding generation and semantic search using pgvector on PostgreSQL.",
+    "LLM response generation wired to the retrieval pipeline, with subject-aware learning, multiple difficulty levels and conversational memory.",
+    "Role-based access with JWT: administrators manage document uploads, learners use a conversational chat interface.",
+    "Spring Boot REST API with a React client for chat history, uploads and suggested study prompts.",
+  ],
+  pipeline: ["Upload", "Chunk", "Embed", "Retrieve", "Generate"],
+  technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "pgvector", "LLMs", "RAG", "JWT", "REST APIs"],
+  demo: "",
+  github: "",
+};
+
 export const PROJECTS = [
+  {
+    title: "CyberDefense – Adaptive Cyber Defense Platform using Deep RL",
+    image: project6,
+    description:
+      "A real-time intrusion detection and adaptive defense platform. A Dueling Double DQN agent classifies live network traffic into ALLOW, THROTTLE, REDIRECT and BLOCK actions, and SHAP explainability shows the features behind every security decision.",
+    technologies: ["Python", "Deep RL", "SHAP", "React", "Express.js", "FastAPI", "MongoDB", "JWT"],
+    demo: "https://cyberdefense-beta.vercel.app/",
+  },
+  {
+    title: "AI-Powered Cardiomegaly Detection App",
+    image: project7,
+    description:
+      "A cross-platform Flutter app that detects cardiomegaly from chest X-rays using deep learning, served by a FastAPI inference server with Firebase authentication and storage. A locally hosted LLM writes clinician-friendly summaries while keeping patient data private.",
+    technologies: ["Flutter", "Dart", "FastAPI", "Firebase", "Python", "TensorFlow / PyTorch", "Vision Transformers", "Explainable AI"],
+    demo: "",
+  },
   {
     title: "E-Commerce Website",
     image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React.js", "Email.js","Redux"],
+      "A fully functional e-commerce website with product listing, shopping cart and user authentication.",
+    technologies: ["HTML", "CSS", "React.js", "Email.js", "Redux"],
     demo: "https://sudarsan2003.github.io/BuyIt/",
-  },
-  {
-    title: "Food Delivey App",
-    image: project2,
-    description:
-      "An application for ordering food in online and get them delivered to you from nearby restaurants",
-    technologies: ["HTML", "CSS", "React.js", "Redux"],
-    demo:"",
-  },
-  {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React.js", "Tailwind"],
-    demo:"",
   },
   {
     title: "Movie Search Engine",
     image: project4,
     description:
-      "A platform for searching a movie ",
+      "A movie discovery app for searching titles and browsing details through a clean, responsive interface.",
     technologies: ["HTML", "CSS", "React.js", "Tailwind"],
-    demo:"https://sudarsan2003.github.io/MFlix/",
+    demo: "https://sudarsan2003.github.io/MFlix/",
   },
   {
-    title: "LearnMate – AI-Powered RAG Learning Assistant",
-    image: project5,
+    title: "Food Delivery App",
+    image: project2,
     description:
-      "An AI-powered Retrieval-Augmented Generation (RAG) platform that provides accurate, context-aware answers from uploaded PDFs, DOCX, and study materials by chunking, embedding, and semantically retrieving the most relevant sections before generating grounded responses — reducing hallucinations compared to relying on a language model alone.",
-    technologies: ["React", "FastAPI", "Spring Boot", "PostgreSQL", "pgvector/Chroma", "LangChain", "Docker", "JWT"],
+      "An application for ordering food online and getting it delivered from nearby restaurants.",
+    technologies: ["HTML", "CSS", "React.js", "Redux"],
     demo: "",
   },
   {
-    title: "CyberDefense – Intelligent Cybersecurity Monitoring Platform",
-    image: project6,
+    title: "Portfolio Website",
+    image: project3,
     description:
-      "A cybersecurity monitoring and analytics platform that aggregates security events, analyzes logs, visualizes potential threats, and delivers AI-assisted insights through a real-time dashboard, helping security teams spot suspicious activity and respond faster.",
-    technologies: ["React", "Spring Boot", "Python", "PostgreSQL", "JWT", "Chart.js", "Docker"],
-    demo: "",
-  },
-  {
-    title: "AI-Based Cardiomegaly Detection using Deep Learning",
-    image: project7,
-    description:
-      "A medical imaging application that uses a convolutional neural network to classify chest X-rays as Normal or Cardiomegaly, with Grad-CAM explainability visualizations and an AI module that generates simplified medical explanations for healthcare professionals and students.",
-    technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "Grad-CAM", "Flutter", "Firebase", "Scikit-learn"],
-    demo: "",
+      "This site: a personal portfolio with interactive 3D scenes built with React Three Fiber, motion animations and Tailwind CSS.",
+    technologies: ["React.js", "Three.js", "React Three Fiber", "Framer Motion", "Tailwind"],
+    demo: "https://manikantha-sudarshan.vercel.app/",
   },
 ];
 

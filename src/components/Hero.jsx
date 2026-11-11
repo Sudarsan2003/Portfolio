@@ -1,10 +1,10 @@
 import React from 'react'
-import { HERO_CONTENT } from '../constants'
+import { HERO_CONTENT, RESUME_URL, RESUME_FILENAME } from '../constants'
 import profilePic from "../assets/profile-headshot.png";
 import { motion } from "motion/react"
 import HeroScene from "./three/HeroScene.jsx"
 import TiltPhoto from "./three/TiltPhoto.jsx"
-import { FaArrowDown } from "react-icons/fa"
+import { FaArrowDown, FaFileDownload, FaArrowRight } from "react-icons/fa"
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -17,7 +17,7 @@ const container = (delay) => ({
 
 const Hero = () => {
   return (
-    <div className='relative overflow-hidden border-b border-[var(--line)] pb-4 lg:mb-35'>
+    <div className='relative isolate overflow-hidden border-b border-[var(--line)] pb-4 lg:mb-35'>
       <HeroScene />
       <div className='flex flex-wrap'>
         <div className='w-full lg:w-1/2'>
@@ -56,6 +56,26 @@ const Hero = () => {
             >
               {HERO_CONTENT}
             </motion.p>
+            <motion.div
+              variants={container(1.15)}
+              initial="hidden"
+              animate="visible"
+              className='mb-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start'
+            >
+              <a
+                href={RESUME_URL}
+                download={RESUME_FILENAME}
+                className='font-ui group inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:-translate-y-0.5 hover:bg-[var(--violet)]'
+              >
+                <FaFileDownload className='transition group-hover:translate-y-0.5' /> Download Resume
+              </a>
+              <a
+                href='#learnmate'
+                className='font-ui group inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-6 py-3 text-sm font-semibold text-[var(--ink)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--violet)]/40 hover:text-[var(--violet)]'
+              >
+                See LearnMate <FaArrowRight className='text-xs transition group-hover:translate-x-1' />
+              </a>
+            </motion.div>
             <motion.a
               href="#about"
               variants={container(1.3)}

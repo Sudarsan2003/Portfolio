@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { PROJECTS } from '../constants';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'motion/react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 // A project card that tilts in 3D towards the cursor and flips in on scroll
@@ -18,6 +18,10 @@ const ProjectCard = ({ project, index }) => {
     stiffness: 200,
     damping: 20,
   });
+
+  const glareX = useTransform(mouseX, [-0.5, 0.5], ['0%', '100%']);
+  const glareY = useTransform(mouseY, [-0.5, 0.5], ['0%', '100%']);
+  const glare = useMotionTemplate`radial-gradient(420px circle at ${glareX} ${glareY}, rgba(124,58,237,0.12), transparent 60%)`;
 
   const handleMouseMove = (e) => {
     const rect = cardRef.current.getBoundingClientRect();
@@ -43,8 +47,13 @@ const ProjectCard = ({ project, index }) => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
-        className="flex w-full flex-wrap rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-[0_0_40px_-15px_rgba(124,58,237,0.35)] lg:max-w-4xl"
+        className="group relative flex w-full flex-wrap rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-[0_0_40px_-15px_rgba(124,58,237,0.35)] lg:max-w-4xl"
       >
+        <motion.div
+          aria-hidden
+          style={{ background: glare }}
+          className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        />
         <div className="relative w-full lg:w-1/4" style={{ transform: 'translateZ(30px)' }}>
           <span className="absolute -left-2 -top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--line)] bg-white font-eyebrow text-xs text-[var(--violet)] shadow-sm">
             {String(index + 1).padStart(2, '0')}
@@ -54,7 +63,8 @@ const ProjectCard = ({ project, index }) => {
             width={150}
             height={150}
             alt={project.title}
-            className="mb-6 rounded-2xl border border-[var(--line)] object-cover shadow-lg shadow-black/10"
+            loading="lazy"
+            className="mb-6 h-[150px] w-[150px] rounded-2xl border border-[var(--line)] object-cover object-top shadow-lg shadow-black/10"
           />
         </div>
 
@@ -101,7 +111,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="font-eyebrow text-xs uppercase tracking-[0.35em] text-[var(--violet)]"
         >
-          {"// selected-work"}
+          {"// more-work"}
         </motion.span>
       </div>
       <motion.h2
@@ -110,7 +120,7 @@ const Projects = () => {
         transition={{ duration: 0.5 }}
         className="font-display mb-16 mt-4 text-center text-3xl uppercase tracking-tight text-[var(--ink)] lg:text-4xl"
       >
-        Projects
+        More Projects
       </motion.h2>
       <div>
         {PROJECTS.map((project, index) => (

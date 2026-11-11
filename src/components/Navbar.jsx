@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import logo from '../assets/logo.png';
 import { FaLinkedin, FaGithub, FaBars, FaTimes, FaFileDownload } from 'react-icons/fa'
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaInstagram } from 'react-icons/fa'
+import { RESUME_URL, RESUME_FILENAME } from '../constants'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Technologies', href: '#technologies' },
   { label: 'Education', href: '#education' },
+  { label: 'LearnMate', href: '#learnmate' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -18,8 +17,6 @@ const LINKS = [
 const SOCIALS = [
   { icon: FaLinkedin, href: 'https://www.linkedin.com/in/lvn-manikantha-sudarshan-annaluru-010717210/' },
   { icon: FaGithub, href: 'https://github.com/Sudarsan2003' },
-  { icon: FaInstagram, href: '#' },
-  { icon: FaSquareXTwitter, href: '#' },
 ]
 
 const Navbar = () => {
@@ -87,9 +84,10 @@ const Navbar = () => {
 
           {/* CV button, circular like the reference's top-right control */}
           <a
-            href="/resume.pdf"
-            download
-            title="Download CV"
+            href={RESUME_URL}
+            download={RESUME_FILENAME}
+            title="Download Resume"
+            aria-label="Download Resume"
             className='flex h-12 w-12 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--ink)] text-white shadow-sm transition-transform hover:scale-105'
           >
             <FaFileDownload />

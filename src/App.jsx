@@ -6,7 +6,8 @@ import Technologies from './components/Technologies'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Education from './components/Education'
-import Experience from './components/Experience'
+import FeaturedProject from './components/FeaturedProject'
+import ScrollProgress from './components/ScrollProgress'
 
 const App = () => {
   return (
@@ -15,13 +16,15 @@ const App = () => {
         <div className="absolute top-0 z-[-2] h-screen w-screen bg-[var(--bg)] bg-[radial-gradient(ellipse_80%_80%_at_50%_-10%,rgba(124,58,237,0.14),rgba(255,255,255,0)),radial-gradient(ellipse_60%_50%_at_85%_10%,rgba(124,58,237,0.08),rgba(255,255,255,0))]"></div>
       </div>
       <div className='container mx-auto px-8'>
+        <ScrollProgress/>
         <Navbar/>
         <section id="home"><Hero/></section>
-        <section id="about"><AboutMe/></section>
+        <section id="about" className="scroll-mt-24"><AboutMe/></section>
         <Technologies/>
-        <section id="education"><Education/></section>
-        <section id="projects"><Projects/></section>
-        <section id="contact"><Contact/></section>
+        <section id="education" className="scroll-mt-24"><Education/></section>
+        <section id="learnmate" className="scroll-mt-24"><FeaturedProject/></section>
+        <section id="projects" className="scroll-mt-24"><Projects/></section>
+        <section id="contact" className="scroll-mt-24"><Contact/></section>
       </div>
     </div>
   )
