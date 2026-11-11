@@ -91,7 +91,7 @@ export const FEATURED_PROJECT = {
   ],
   pipeline: ["Upload", "Chunk", "Embed", "Retrieve", "Generate"],
   technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "pgvector", "LLMs", "RAG", "JWT", "REST APIs"],
-  demo: "",
+  demo: "https://srvlearnmate.in",
   github: "",
 };
 
